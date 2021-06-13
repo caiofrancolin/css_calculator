@@ -5,10 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./script/calculation.js"></script>
+  <link rel="stylesheet" href="./css/style.css">  
 </head>
-<body>
+<body id="pag">
   <div class="container-calculator">
     <h2 class="calculator-title">Calculator</h2>
     <div class="calculator grid grid-template-columns-1">
@@ -16,6 +15,9 @@
       <input id="result" class="result" type="text">
       <div class="number-buttons grid grid-template-columns-4">
         <button class="button char" value="CE" onclick="writeNum(value)">CE</button>
+        <button class="button char" value="CE" onclick="writeNum(value)">M+</button>
+        <button class="button char" type="button" value="(" onclick="writeNum(value)">(</button>
+        <button class="button char" type="button" value=")" onclick="writeNum(value)">)</button>
       </div>
       <div class="number-buttons grid grid-template-columns-4">
         <button class="button number" value="1" onclick="writeNum(Number(value))">1</button>
@@ -35,32 +37,12 @@
         <button class="button char" value="," onclick="writeNum(value)">,</button>
         <button class="button char" value="+" onclick="writeNum(value)">+</button>
       </div>        
-      <div class="number-buttons grid grid-template-columns-3">
+      <div class="number-buttons grid grid-template-columns-1">
         <button class="button char" type="button" value="=" onclick="writeNum(value)">=</button>
-        <button class="button char" type="button" value="(" onclick="writeNum(value)">(</button>
-        <button class="button char" type="button" value=")" onclick="writeNum(value)">)</button>
       </div>
     </div>
   </div>
 
-  <!-- <script>
-    function writeNum(value) {
-      var calc = document.getElementById('calculation')
-      var result = document.getElementById('result')
-     
-      if (value === "CE") {
-        calc.value = ''
-        result.value = ''
-      } else {
-        if (value == '=') {
-          result.value = eval(calc.value)
-        } else {
-          calc.value += value
-          result.value = eval(calc.value)
-        }
-      }
-    }
-  </script> -->
-
+  <script type="text/javascript" src="./script/calculation.js"></script>
 </body>
 </html>
