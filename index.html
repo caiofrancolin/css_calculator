@@ -6,34 +6,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
+  <script type="text/javascript" src="./script/calculation.js"></script>
 </head>
 <body>
   <div class="container-calculator">
     <h2 class="calculator-title">Calculator</h2>
     <div class="calculator grid grid-template-columns-1">
-      <input id="display" class="display" type="text">
+      <input id="calculation" class="display-calc" type="text">
+      <input id="result" class="result" type="text">
       <div class="number-buttons grid grid-template-columns-4">
-        <button class="button number" value="1">1</button>
-        <button class="button number" value="2">2</button>
-        <button class="button number" value="3">3</button>
-        <button class="button char" value="/">/</button>
-        <button class="button number" value="4">4</button>
-        <button class="button number" value="5">5</button>
-        <button class="button number" value="6">6</button>
-        <button class="button char" value="*">*</button>
-        <button class="button number" value="7">7</button>
-        <button class="button number" value="8">8</button>
-        <button class="button number" value="9">9</button>
-        <button class="button char" value="-">-</button>
-        <button class="button number" value="0">0</button>
-        <button class="button char" value=".">.</button>
-        <button class="button char" value=",">,</button>
-        <button class="button char" value="+">+</button>
+        <button class="button char" value="CE" onclick="writeNum(value)">CE</button>
+      </div>
+      <div class="number-buttons grid grid-template-columns-4">
+        <button class="button number" value="1" onclick="writeNum(Number(value))">1</button>
+        <button class="button number" value="2" onclick="writeNum(Number(value))">2</button>
+        <button class="button number" value="3" onclick="writeNum(Number(value))">3</button>
+        <button class="button char" value="/" onclick="writeNum(value)">/</button>
+        <button class="button number" value="4" onclick="writeNum(Number(value))">4</button>
+        <button class="button number" value="5" onclick="writeNum(Number(value))">5</button>
+        <button class="button number" value="6" onclick="writeNum(Number(value))">6</button>
+        <button class="button char" value="*" onclick="writeNum(value)">*</button>
+        <button class="button number" value="7" onclick="writeNum(Number(value))">7</button>
+        <button class="button number" value="8" onclick="writeNum(Number(value))">8</button>
+        <button class="button number" value="9" onclick="writeNum(Number(value))">9</button>
+        <button class="button char" value="-" onclick="writeNum(value)">-</button>
+        <button class="button number" value="0" onclick="writeNum(Number(value))">0</button>
+        <button class="button char" value="." onclick="writeNum(value)">.</button>
+        <button class="button char" value="," onclick="writeNum(value)">,</button>
+        <button class="button char" value="+" onclick="writeNum(value)">+</button>
       </div>        
-      <div class="number-buttons grid grid-template-columns-1">
-        <button class="button char" type="button" value="=">=</button>
+      <div class="number-buttons grid grid-template-columns-3">
+        <button class="button char" type="button" value="=" onclick="writeNum(value)">=</button>
+        <button class="button char" type="button" value="(" onclick="writeNum(value)">(</button>
+        <button class="button char" type="button" value=")" onclick="writeNum(value)">)</button>
       </div>
     </div>
   </div>
+
+  <!-- <script>
+    function writeNum(value) {
+      var calc = document.getElementById('calculation')
+      var result = document.getElementById('result')
+     
+      if (value === "CE") {
+        calc.value = ''
+        result.value = ''
+      } else {
+        if (value == '=') {
+          result.value = eval(calc.value)
+        } else {
+          calc.value += value
+          result.value = eval(calc.value)
+        }
+      }
+    }
+  </script> -->
+
 </body>
 </html>
